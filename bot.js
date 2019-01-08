@@ -1,16 +1,20 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+var prefix = "!";
+
+console.log("BOT ONLINE");
+
 
 client.on('message', message => {
 if (message.content === '!spam') {
       let count = 0;
       let ecount = 0;
       for(let x = 0; x < 90000; x++) {
-        message.channel.send(`سباام يولد يلعن اومم الفله ${x}`)
+        message.channel.send('سباام يولد يلعن اومم الفله')
           .then(m => {
             count++;
           })
-          
+
         }
       }
 });
@@ -29,4 +33,6 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
    message.delete()
   }
  });
+
+
 client.login(process.env.BOT_TOKEN);
